@@ -71,21 +71,21 @@ def main():
     
     payload = {
         "required_status_checks": None,
-        "enforce_admins": True,
+        "enforce_admins": False,
         "required_pull_request_reviews": {
-            "dismiss_stale_reviews": True,
+            "dismiss_stale_reviews": False,
             "require_code_owner_reviews": False,
             "required_approving_review_count": 1
         },
         "restrictions": None
     }
-    
+
     try:
         response = requests.put(url, headers=headers, json=payload)
-        
+
         if response.status_code == 200:
             print(f"✅ Success: Branch '{args.branch}' is now protected.")
-            print("Settings applied: PR required, 1 approval required, Enforce for admins.")
+            print("Settings applied: PR required, 1 approval required.")
         else:
             print(f"❌ Failed with status code {response.status_code}:")
             try:
