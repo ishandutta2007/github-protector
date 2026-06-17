@@ -1,42 +1,45 @@
 # github_protector
 
 
- Project Structure:
+Project Structure:
 
-   1 github-protector/
-   2 ├── pyproject.toml           # Package metadata and entry points
-   3 ├── github_protector/
-   4 │   ├── __init__.py
-   5 │   └── cli.py               # Main CLI logic
-   6 └── .env                     # Your local environment file
+```
+github-protector/
+   ├── pyproject.toml           # Package metadata and entry points
+   ├── github_protector/
+   │   ├── __init__.py
+   │   └── cli.py               # Main CLI logic
+   └── .env                     # Your local environment file
+```
 
-  Installation:
-  To install it locally in editable mode (so changes reflect immediately):
-   1 pip install -e .
+Installation:
+To install it locally in editable mode (so changes reflect immediately):
+```
+   pip install -e .
+```
 
-  Usage:
-  Once installed, you can run it from anywhere:
+Usage:
+Once installed, you can run it from anywhere:
 
-  1. Using defaults (from .env and git):
+1. Using defaults (from .env and git):
+   `github-protect`
+2. Providing explicit arguments:
+   `github-protect --token YOUR_TOKEN --username ishandutta2007 --repo MyRepo --branch main`
+3. View Help:
+   `github-protect --help`
 
-   1 github-protect
+To Upload to PyPI:
+If you want to share this on PyPI, follow these steps:
 
-  2. Providing explicit arguments:
+1. Build the package:
+```
+   pip install build
+   python -m build
+```
 
-   1 github-protect --token YOUR_TOKEN --username ishandutta2007 --repo MyRepo --branch main
-
-  3. View Help:
-   1 github-protect --help
-
-  To Upload to PyPI:
-  If you want to share this on PyPI, follow these steps:
-   1. Build the package:
-
-   1    pip install build
-   2    python -m build
-   2. Upload using Twine:
-
-   1    pip install twine
-   2    python -m twine upload dist/*
-
+2. Upload using Twine:
+```
+   pip install twine
+   python -m twine upload dist/*
+```
    
