@@ -23,3 +23,7 @@ classifiers = [
 
 [project.scripts]
 github-protect = "github_protector.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["github_protector*"]
+
